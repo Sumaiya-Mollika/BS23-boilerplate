@@ -6,11 +6,13 @@ class GenericApiResponse<T> {
 
   GenericApiResponse({this.status, this.message, this.payload, this.success});
 
-  factory GenericApiResponse.fromJson(Map<String, dynamic> json, T Function(Map<String, dynamic>) fromJsonPayload) {
+  factory GenericApiResponse.fromJson(Map<String, dynamic> json,
+      T Function(Map<String, dynamic>) fromJsonPayload) {
     return GenericApiResponse<T>(
       status: json['status'],
       message: json['message'],
-      payload: json['payload'] != null ? fromJsonPayload(json['payload']) : null,
+      payload:
+          json['payload'] != null ? fromJsonPayload(json['payload']) : null,
       success: json['success'],
     );
   }

@@ -11,11 +11,14 @@ class PaginationApiResponse<T> {
     this.success,
   });
 
-  factory PaginationApiResponse.fromJson(Map<String, dynamic> json, T Function(Map<String, dynamic>) fromJsonT) {
+  factory PaginationApiResponse.fromJson(
+      Map<String, dynamic> json, T Function(Map<String, dynamic>) fromJsonT) {
     return PaginationApiResponse<T>(
       status: json["status"],
       message: json["message"],
-      payload: json["payload"] == null ? null : Payload<T>.fromJson(json["payload"], fromJsonT),
+      payload: json["payload"] == null
+          ? null
+          : Payload<T>.fromJson(json["payload"], fromJsonT),
       success: json["success"],
     );
   }
@@ -57,10 +60,14 @@ class Payload<T> {
     this.empty,
   });
 
-  factory Payload.fromJson(Map<String, dynamic> json, T Function(Map<String, dynamic>) fromJsonT) {
+  factory Payload.fromJson(
+      Map<String, dynamic> json, T Function(Map<String, dynamic>) fromJsonT) {
     return Payload<T>(
-      content: json["content"] == null ? [] : List<T>.from(json["content"]!.map((x) => fromJsonT(x))),
-      pageable: json["pageable"] == null ? null : Pageable.fromJson(json["pageable"]),
+      content: json["content"] == null
+          ? []
+          : List<T>.from(json["content"]!.map((x) => fromJsonT(x))),
+      pageable:
+          json["pageable"] == null ? null : Pageable.fromJson(json["pageable"]),
       totalElements: json["totalElements"],
       totalPages: json["totalPages"],
       last: json["last"],
@@ -75,7 +82,9 @@ class Payload<T> {
 
   Map<String, dynamic> toJson(Map<String, dynamic> Function(T) toJsonT) {
     return {
-      "content": content == null ? [] : List<dynamic>.from(content!.map((x) => toJsonT(x))),
+      "content": content == null
+          ? []
+          : List<dynamic>.from(content!.map((x) => toJsonT(x))),
       "pageable": pageable?.toJson(),
       "totalElements": totalElements,
       "totalPages": totalPages,
@@ -89,7 +98,6 @@ class Payload<T> {
     };
   }
 }
-
 
 class Pageable {
   Sort? sort;

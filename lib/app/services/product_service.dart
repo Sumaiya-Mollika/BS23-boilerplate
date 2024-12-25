@@ -1,4 +1,4 @@
-import '../models/common/generic_api_list_response.dart';
+import '../models/generic response/generic_api_list_response.dart';
 import '../models/product/product_info.dart';
 import '../network/api_client.dart';
 import '../utils/constants.dart';
@@ -15,8 +15,7 @@ class ProductService {
 
   void getProducts(Map<String, dynamic>? params,
       ResponseCallback<GenericListResponse<ProductInfo>?, String?> callback) {
-    _apiClient.getRequest("url", params,
-        (response, error) {
+    _apiClient.getRequest("url", params, (response, error) {
       if (response != null) {
         callback(
             GenericListResponse.fromJson(
@@ -26,4 +25,5 @@ class ProductService {
         callback(null, error);
       }
     });
-  }}
+  }
+}

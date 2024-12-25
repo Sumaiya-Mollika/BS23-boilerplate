@@ -6,7 +6,8 @@ class GenericListResponse<T> {
 
   GenericListResponse({this.status, this.message, this.payload, this.success});
 
-  GenericListResponse.fromJson(Map<String, dynamic> json, T Function(Map<String, dynamic>) fromJsonT) {
+  GenericListResponse.fromJson(
+      Map<String, dynamic> json, T Function(Map<String, dynamic>) fromJsonT) {
     status = json['status'];
     message = json['message'];
     if (json['payload'] != null) {
