@@ -36,3 +36,4 @@ const primaryColor = Color(0xFF7077F4);
 const kDisabledButtonColor = Color(0xFFCCCEF4);
 const kWhiteColor = Color(0xFFFFFFFF);
 const kDividerColor = Color(0x50DCDDDE);
+const kGreenColor = Color(0xFF4CAF50);

@@ -34,7 +34,7 @@ class TextComponent extends StatelessWidget {
     this.isHideKeyboard = true,
     this.color = kTextColor,
     this.fontSize = textFontSize,
-    this.textAlign = TextAlign.center,
+    this.textAlign = TextAlign.start,
     this.lineHeight = kLineHeight,
     this.letterSpacing = kSmallerLetterSpacing,
     this.fontWeight = regularFontWeight,
