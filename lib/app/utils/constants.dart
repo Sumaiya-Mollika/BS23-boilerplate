@@ -11,4 +11,5 @@ const String placeholderAsset = "assets/images/placeholder.jpg";
 
 class StorageKeys {
   static const String keyJwtToken = "keyJwtToken";
+  static const String keyCartItems = "keyCartItems";
 }

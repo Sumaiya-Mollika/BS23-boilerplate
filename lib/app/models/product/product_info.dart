@@ -14,4 +14,6 @@ class ProductInfo {
       {this.productName, this.id, this.price, this.details, this.imageUrl});
   factory ProductInfo.fromJson(Map<String, dynamic> json) =>
       _$ProductInfoFromJson(json);
+
+   Map<String, dynamic> toJson() => _$ProductInfoToJson(this);
 }
